@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "364f83b7-fdbb-4494-b136-eb1c90abcc46",
+		"name": "HotelFA_GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{authorization(login:\"1\",password:\"1\"){Token}}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n    add_person(input: {\r\n            Login: \"7\",\r\n            Password: \"7\"\r\n            Name: \"7\"\r\n            Phone: \"88005553535\"\r\n            Email: \"seven@mail.com\"\r\n            Birthday: \"07.07.1999\"\r\n            Address: \"Seven\"\r\n    })\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n    add_order(input: {\r\n        AnimalID: 3\r\n        DeliveryToTheHotel: \"0\"\r\n        FromDeliveryAddress: \"\"\r\n        FromDeliveryTime: \"\"\r\n        DeliveryFromHotel: \"0\"\r\n        ToDeliveryAddress: \"\"\r\n        ToDeliveryTime: \"\"\r\n        DateStart: \"2021-05-01\"\r\n        DateEnd: \"2021-05-20\"\r\n        Comment: \"fffff\"\r\n        })\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n    add_review(input: {\r\n        AnimalTypeID: 1\r\n        Body: \"Отель супер!\"\r\n        })\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_animal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "mgXyJu8Eql6hQqH9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    add_animal(input:{\r\n        Name: \"Крокозябра\"\r\n        AnimalTypeID: 1\r\n        Sex: 0\r\n        Comment: \"Нежнятинка\" \r\n        Birthday: \"2020-01-13\"\r\n        })\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "OhK9BPaOcAiFFR1n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    add_message(input: {\r\n        FilePath: \"\"\r\n        Text: \"check!\"\r\n        })\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_reviews",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    read_reviews{ \r\n        _id\r\n        Body\r\n        AddTime\r\n        AnimalType{\r\n            NameIfType\r\n        }\r\n        Client{\r\n            _id\r\n            Name\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_animals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    read_animals{\r\n         Name\r\n         Sex\r\n         Comment\r\n         Birthday\r\n         AnimalType{\r\n             NameIfType\r\n         }\r\n         Client{\r\n             Name\r\n         }\r\n        }\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_journals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "DaLK00qv6N6ak27D",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    read_journals{\r\n        _id\r\n        TimeStart\r\n        TimeEnd\r\n        Task\r\n        Comment\r\n        Filepath\r\n        Order{\r\n            _id\r\n            Comment\r\n            Animal{\r\n                Name\r\n            }\r\n        }\r\n        Worker{\r\n            Name\r\n        }\r\n        }\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_orders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "OhK9BPaOcAiFFR1n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    read_orders(datestart:\"\", dateend:\"\"){\r\n        _id\r\n        Status\r\n        DateStart\r\n        DateEnd\r\n        Client{\r\n            Name\r\n        }\r\n        Animal{\r\n            Name\r\n        }\r\n        DeliveryToTheHotel\r\n        FromDeliveryAddress\r\n        FromDeliveryTime\r\n        DeliveryFromHotel\r\n        ToDeliveryAddress\r\n        ToDeliveryTime\r\n        Comment\r\n        Price\r\n        }\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_animals_in_hotel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    read_animals_in_hotel{\r\n        _id\r\n        Name\r\n        AnimalType {NameIfType}\r\n        Sex\r\n        Comment\r\n        Birthday\r\n        Client{\r\n            Name\r\n        }\r\n        }\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "OhK9BPaOcAiFFR1n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    read_messages(unread: 0, datestart:\"2021-05-11-02-10\", dateend:\"2021-05-11-02-40\"){\r\n        _id\r\n        Time\r\n        Text\r\n        FilePath\r\n        Unread\r\n        Chat{\r\n            _id\r\n            Person{\r\n                Name\r\n            }\r\n        }\r\n        }\r\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "look_account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "sCZUANBj6krwO3n1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    look_account\r\n    {\r\n        _id\r\n        Name\r\n        Phone\r\n        Email\r\n        Birthday\r\n        Address\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "look_workers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					},
+					{
+						"key": "WorkerID",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    look_account_worker{\r\n        _id\r\n        Name\r\n        Phone\r\n        Email\r\n        Birthday\r\n        Address\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changepass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "m0UBTKpgElYrgmZO",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{changepass(input:{Password:\"1\"})}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{logout(token:\"vXjPrMrEKVEtpup3\")}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_journals_by_animalid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "yL7Uz0oicMno2V5j",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    read_journals_by_animalid(animalid:1)\r\n    { \r\n        _id\r\n        TimeStart\r\n        TimeEnd\r\n        Order {\r\n            _id\r\n            Animal{\r\n                Name\r\n            }\r\n        }\r\n        Worker {\r\n            Name\r\n        }\r\n        Task\r\n        Comment\r\n        Filepath\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "look_worker_by_id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "yL7Uz0oicMno2V5j",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    look_worker_by_id(workerid:2){\r\n        _id\r\n        Name\r\n        Phone\r\n        Email\r\n        Birthday\r\n        Address\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/graphql",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

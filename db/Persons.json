@@ -1,0 +1,2 @@
+{"_id":1,"Token":"tJtd2fDADoPlOF10","DateOfIssueToken":{"$date":"2021-05-11T12:59:14.653Z"},"State":1,"Login":"1","Password":"1","Name":"tea","Phone":"89500768814","Email":"tochilova.1999@mail.ru","Birthday":"1999-10-11","Address":"Pervom"}
+{"_id":2,"Token":null,"DateOfIssueToken":null,"State":0,"Login":"2","Password":"2","Name":"Worker Goga","Phone":"88005553535","Email":"workergoga@gmail.com","Birthday":"1999-10-01","Address":"workerstreet, 2"}

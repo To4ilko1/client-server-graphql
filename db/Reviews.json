@@ -1,0 +1,2 @@
+{"_id":1,"AnimalTypeID":1,"ClientID":1,"AddTime":{"$date":"2020-10-03T18:38:12.434Z"},"Body":"Прекрасный отель!!!!!","DelTime":null}
+{"_id":2,"AnimalTypeID":1,"Body":"w","AddTime":{"$date":"2021-05-11T02:50:43.683Z"},"DelTime":null,"ClientID":1}

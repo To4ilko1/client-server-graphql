@@ -1,0 +1,152 @@
+type Query {
+    order_with_id: Order
+    read_reviews: [Review]
+    read_animals: [Animal]
+    read_journals: [Journal]
+    read_journals_by_animalid(animalid: Int): [Journal]
+    read_orders(datestart: String, dateend: String): [Order]
+    read_animals_in_hotel: [Animal]
+    read_messages(unread: Int, datestart: String, dateend: String): [ChatMessage]
+    look_account: [Person]
+    look_workers: [Person]
+    look_worker_by_id(workerid: Int): [Person]
+}
+type Review{
+    _id: Int!
+    AnimalType: AnimalType
+    Body: String!
+    AddTime: String!
+    Client: Person
+    DelTime: String
+}
+type Person {
+    _id: Int!
+    Token: String
+    DateOfIssueToken: String
+    State: Int!
+    Login: String!
+    Password: String!
+    Name: String!
+    Phone: String!
+    Email: String
+    Birthday: String
+    Address: String
+}
+type Journal{
+    _id: Int
+    Date: String
+    TimeStart: String
+    TimeEnd: String
+    Order: Order
+    Worker: Person
+    Task: String
+    Comment: String
+    Filepath: String
+    DelTime: String
+}
+type Order{
+    _id: Int
+    Journals: [Journal]!
+    Status: String!
+    DateStart: String!
+    DateEnd: String!
+    Client: Person
+    Animal: Animal
+    DeliveryToTheHotel: String!
+    FromDeliveryAddress: String
+    FromDeliveryTime: String
+    DeliveryFromHotel: String!
+    ToDeliveryAddress: String
+    ToDeliveryTime: String
+    Comment: String
+    DelTime: String
+    Price: Float
+}
+type AnimalType {
+    _id: Int!
+    NameIfType: String!
+}
+type Animal {
+    _id: Int!
+    Name: String!
+    AnimalType: AnimalType!
+    Sex: Int
+    Comment: String
+    Birthday: String
+    Client: Person
+    DelTime: String
+}
+type ChatMessage {
+    _id: Int
+    Chat: Chat
+    Time: String
+    Text: String
+    FilePath: String
+    Unread: Int
+    DelTime: String
+}
+type Chat {
+    _id: Int!
+    Person: Person
+    Messages: [ChatMessage]
+}
+
+
+
+type Token {
+    Token: String
+}
+
+input NewClient {
+    Login: String!
+    Password: String!
+    Name: String!
+    Phone: String!
+    Email: String
+    Birthday: String
+    Address: String
+}
+input newReview {
+    AnimalTypeID: Int
+    Body: String
+}
+input newAnimal {
+    Name: String!
+    AnimalTypeID: Int!
+    Sex: Int!
+    Comment: String
+    Birthday: String
+    DelTime: String
+}
+
+input newMessage {
+    FilePath: String
+    Text: String!
+}
+input newOrder {
+    AnimalID: Int!
+    DeliveryToTheHotel: String!
+    FromDeliveryAddress: String
+    FromDeliveryTime: String
+    DeliveryFromHotel: String!
+    ToDeliveryAddress: String
+    ToDeliveryTime: String
+    DateStart: String!
+    DateEnd: String!
+    Comment: String
+}
+input newPass{
+    Password: String!
+}
+
+
+type Mutation {
+    authorization(login: String!, password: String!): Token
+    add_person(input: NewClient): String
+    add_order(input: newOrder): String
+    add_review(input: newReview): String
+    add_animal(input: newAnimal): String
+    add_message(input: newMessage): String
+    changepass(input: newPass): String
+    logout(token: String): String
+}
